@@ -1,2 +1,33 @@
 \section{Metodologia}%
 \label{sec:metodologia}
+
+\subsection{As Tecnologias Abordadas}
+
+Com o tempo oferecido para o minicurso -- três ou quatro horas -- optamos por um recorte introdutório de conceitos para o lado do cliente \textit{frontend}. Desta forma, a linguagem JavaScript foi escolhida em integração com à biblioteca React, duas tecnologias amplamente utilizadas no desenvolvimento de aplicações modernas. Por fim, devido à limitação do tempo disponível, decidimos não abordar \textit{Cascade Style Sheets} (CSS), de forma que todo o estilo aplicado durante o minicurso é disponibilizado no material de apoio.
+
+A escolha do JavaScript justifica-se por sua onipresença no desenvolvimento de \textit{frontend} moderno e por sua curva de aprendizado relativamente acessível para iniciantes. Esta linguagem interpretada possibilita a manipulação dinâmica de elementos \textit{HTML}, o gerenciamento eficiente de eventos interativos e a modificação de estilos em tempo real com desempenho adequado às necessidades contemporâneas do desenvolvimento \textit{web}.
+
+A biblioteca React, por sua vez, é uma opção robusta e ricamente documentada para a criação de aplicações \textit{Single Page Application (SPA)}. Ela permite o desenvolvimento de componentes reutilizáveis, que favorecem a escalabilidade da aplicação e tornam a manutenção, organização e testabilidade do código mais eficientes -- fatores essenciais para a melhoria da qualidade do software e dos processos de desenvolvimento.
+
+Com esse foco, o minicurso, voltado para introduzir os primeiros passos no \textit{React}, prioriza a componentização de elementos e a comunicação entre eles por meio da passagem de propriedades \textit{props}.
+
+Além destes tópicos pétreos da biblioteca, o minicurso aborda dois dos principais \textit{React Hooks}, o \textit{useState} e o \textit{useEffect}. O segundo, entretanto, apenas é apresentado no minicurso quando são disponibilizadas quatro horas pela organização do evento. Os \textit{hooks} são, desde 2019, uma das principais funcionalidades da biblioteca \textit{React}, permitindo a utilização de estado e outros recursos sem a necessidade de escrever classes. Eles tornam os componentes mais simples, reutilizáveis e legíveis.
+
+O \textit{useState} é um dos hooks mais fundamentais e amplamente utilizados, ele permite que componentes funcionais mantenham estado interno. A função \textit{useState} recebe um valor inicial como argumento e retorna um array com dois elementos: o primeiro é o valor atual do estado, e o segundo é uma função para atualizar esse estado -- semelhante a uma função \textit{setter}. No escopo do curso, isto é utilizado para exibir a quantidade disponível de cada recurso do jogo.
+
+O \textit{useEffect} é outro hook fundamental do \textit{React}. Ele permite que componentes realizem efeitos colaterais em resposta a mudanças externas, como chamadas a \textit{APIs}. Durante o curso, este hook é utilizado para atualizar o estado do jogo a cada segundo, implementando produção de recursos por segundo.
+
+\subsection{O Material de Apoio}
+Para tal foi desenvolvido um material de apoio composto por slides disponibilizando o código de forma progressiva, este material é divido em passos com comentários que visam possibilitar o desenvolvimento do jogo por um iniciante interessado mesmo sem a presença de um instrutor \todo[inline]{bla bla bla...}
+
+\subsection{A Motivação e o Jogo}
+Uma vez, com o escopo definido, percebeu-se que um jogo do tipo idle clicker configuraria um projeto possível de se aplicar os conceitos almejados de forma interativa e envolvente \todo[inline]{bla bla bla...} Jogos idle clicker são jogos sobre automação e administração de recursos \todo[inline]{bla bla bla...}
+
+Desta maneira foi escolhida como temática um jogo que a cada \texttt{click} o usuário obtém uma cópia de um recurso como madeira, que, por sua vez, pode ser vendida para a obtenção de ouro \todo[inline]{bla bla bla...}
+
+Quando a oportunidade nos permite apresentar o minicurso por quatro horas é possível abordar mais uma funcionalidade, a de geração automática de recursos. Esta característica é adicionada ao jogo através da contratação de trabalhadores, uma vez contratados eles passam a fornecer um fluxo do recurso madeira \todo[inline]{bla bla bla...}
+\subsection{Evolução: Typescript e o Livro}
+Após o curso ser ministrado com sucesso por dois anos consecutivos, percebemos a necessidade de evoluir o material para um nível mais avançado. Dessa forma, decidimos adicionar o Typescript ao escopo do curso, uma vez que a tipagem estática da linguagem pode ser uma ferramenta poderosa para evitar erros comuns de desenvolvimento e facilitar a manutenção do código \todo[inline]{bla bla bla...}
+Além disso o material, anteriormente disponível em slides, foi transformado em um livro digital, usando o framework legal que eu não lembro o nome \todo[inline]{bla bla bla...} e pode ser encontrado neste link de forma que está disponível sempre e não somente durante a apresentação.
+%https://gabdumal.github.io/book_reidita/
+Em 2024, pela primeira vez o minicurso contou com a presença de uma nova membro do GetSi atuando como monitora para auxiliar os alunos a resolver erros pontuais e acompanhar a apresentação, ainda que em outros anos recebemos ajuda semelhante de outros discentes isto ocorria de forma casual e sem planejamento, enquanto, desta vez foi possível integrar mais uma mebro do grupo \todo[inline]{bla bla bla...}
