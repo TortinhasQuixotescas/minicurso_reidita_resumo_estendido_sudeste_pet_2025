@@ -1,27 +1,48 @@
 \section{Metodologia}%
 \label{sec:metodologia}
 
+A fim de motivar os discentes no aprendizado de \gls{pw}, decidimos abordar o desenvolvimento de um jogo eletrônico.
+Em razão do planejamento de duração de quatro horas, deveríamos selecionar um estilo de jogo cujas mecânicas permitissem a aplicação dos conceitos almejados em um ambiente de simples configuração e que fosse facilmente compreendido por um público diverso.
+
+Dentre as opções, optamos pelo gênero \gls{ic}, ou também chamado de incremental.
+Segundo~\citeonline{alharthi:2018:playing_to_wait}, esse estiloengloba experiências minimalistas, tipicamente disponíveis em navegadores Web, e que requerem pouca interação do jogador.
+Sua mecânica central é realizar alguma ação repetitiva, como clicar em um botão, para acumular recursos e progredir no jogo, desbloqueando novas funcionalidades e desafios.
+Alguns exemplos que inspiraram o desenvolvimento do jogo proposto são Cookie Clicker, de~\citeonline{orteil:2013:cookie_clicker} e Candy Box 2, de~\citeonline{aniwey:2013:candy_box_2}.
+
 \subsection{As Tecnologias Abordadas}
 
-Com o tempo oferecido para o minicurso -- três ou quatro horas -- optamos por um recorte introdutório de conceitos para o lado do cliente \textit{frontend}. Desta forma, a linguagem JavaScript foi escolhida em integração com à biblioteca React, duas tecnologias amplamente utilizadas no desenvolvimento de aplicações modernas. Por fim, devido à limitação do tempo disponível, decidimos não abordar \textit{Cascade Style Sheets} (CSS), de forma que todo o estilo aplicado durante o minicurso é disponibilizado no material de apoio.
+A construção de páginas Web em navegadores é comumente realizada por meio da linguagem de marcação \gls{html}, da linguagem de estilização \gls{css} e da linguagem de programação \gls{js}.
+Essa última é responsável por tornar a página dinâmica, ao possibilitar a manipulação dinâmica de elementos \gls{html}, o gerenciamento eficiente de eventos interativos e a modificação de estilos em tempo real com desempenho adequado às necessidades contemporâneas do desenvolvimento Web.
 
-A escolha do JavaScript justifica-se por sua onipresença no desenvolvimento de \textit{frontend} moderno e por sua curva de aprendizado relativamente acessível para iniciantes. Esta linguagem interpretada possibilita a manipulação dinâmica de elementos \textit{HTML}, o gerenciamento eficiente de eventos interativos e a modificação de estilos em tempo real com desempenho adequado às necessidades contemporâneas do desenvolvimento \textit{web}.
+Seu caráter interpretado e sua sintaxe simplificada a tornam uma linguagem de fácil aprendizado, apresentando uma curva de aprendizado acessível para iniciantes.
+Apesar disso, limitações dessa levaram à criação de ferramentas auxiliares, como o \textit{superset} \gls{ts}~\cite{microsoft:2012:typescript}, que adiciona tipagem estática e outros recursos à linguagem.
 
-A biblioteca React, por sua vez, é uma opção robusta e ricamente documentada para a criação de aplicações \textit{Single Page Application (SPA)}. Ela permite o desenvolvimento de componentes reutilizáveis, que favorecem a escalabilidade da aplicação e tornam a manutenção, organização e testabilidade do código mais eficientes -- fatores essenciais para a melhoria da qualidade do software e dos processos de desenvolvimento.
+Acerca do método de manipulação da interface, a abordagem tradicional é a utilização de \gls{dom}, que é uma representação em árvore dos elementos da página~\cite{whatwg:2025:dom_standard}.
+O desenvolvedor seleciona e manipula esses elementos por meio de métodos e propriedades disponíveis no \gls{js}, o que pode tornar o código complexo e de difícil manutenção.
 
+A fim de reformar essa perspectiva, a biblioteca React gerencia o ciclo de atualização dos elementos em um \gls{dom} virtual.
+O programador pode declarar estados mutáveis na aplicação, que serão automaticamente atualizados na interface quando houver mudanças.
+Isso permite o desenvolvimento de componentes reutilizáveis, que favorecem a criação de aplicações \gls{spa}~\cite{meta:2025:thinking_in_react}.
+Assim, é possível obter melhor organização, manutenibilidade e escalabilidade, fatores essenciais para a melhoria da qualidade do software.
+
+Portanto, a linguagem JavaScript foi escolhida em integração com à biblioteca React, duas tecnologias amplamente utilizadas no desenvolvimento de aplicações modernas. Por fim, devido à limitação do tempo disponível, decidimos não abordar \textit{Cascade Style Sheets} (CSS), de forma que todo o estilo aplicado durante o minicurso é disponibilizado no material de apoio.
 Com esse foco, o minicurso, voltado para introduzir os primeiros passos no \textit{React}, prioriza a componentização de elementos e a comunicação entre eles por meio da passagem de propriedades \textit{props}.
 
-Além destes tópicos pétreos da biblioteca, o minicurso aborda dois dos principais \textit{React Hooks}, o \textit{useState} e o \textit{useEffect}. O segundo, entretanto, apenas é apresentado no minicurso quando são disponibilizadas quatro horas pela organização do evento. Os \textit{hooks} são, desde 2019, uma das principais funcionalidades da biblioteca \textit{React}, permitindo a utilização de estado e outros recursos sem a necessidade de escrever classes. Eles tornam os componentes mais simples, reutilizáveis e legíveis.
+Além destes tópicos, o minicurso aborda dois principais \textit{React Hooks}, o \textit{useState} e o \textit{useEffect}.
+Os \textit{hooks} são, desde 2019, uma das principais funcionalidades da biblioteca \textit{React}, permitindo a utilização de estado e outros recursos sem a necessidade de escrever classes~\cite{meta:2025:react_dom_hooks}. Eles tornam os componentes mais simples, reutilizáveis e legíveis.
 
-O \textit{useState} é um dos hooks mais fundamentais e amplamente utilizados, ele permite que componentes funcionais mantenham estado interno. A função \textit{useState} recebe um valor inicial como argumento e retorna um array com dois elementos: o primeiro é o valor atual do estado, e o segundo é uma função para atualizar esse estado -- semelhante a uma função \textit{setter}. No escopo do curso, isto é utilizado para exibir a quantidade disponível de cada recurso do jogo.
+O \textit{hook} \textit{useState} permite que componentes funcionais mantenham estado interno.
+A função \textit{useState} recebe um valor inicial como argumento e retorna um vetor com dois elementos: o valor atual do estado, e uma função para atualizá-lo.
+No escopo do curso, essa lógica é utilizada para exibir a quantidade disponível de cada recurso do jogo, que é atualizada a cada \textit{click} do usuário.
 
-O \textit{useEffect} é outro hook fundamental do \textit{React}. Ele permite que componentes realizem efeitos colaterais em resposta a mudanças externas, como chamadas a \textit{APIs}. Durante o curso, este hook é utilizado para atualizar o estado do jogo a cada segundo, implementando produção de recursos por segundo.
+Já o \textit{hook} \textit{useEffect} permite que componentes realizem efeitos colaterais em resposta a mudanças externas, como chamadas a \textit{APIs}.
+Durante o curso, este \textit{hook} é utilizado para atualizar o estado do jogo a cada segundo --- o que utiliza um processo do navegador ---, implementando produção constante de recursos, característica do caráter incremental do jogo.
 
 \subsection{O Material de Apoio}
 Para tal foi desenvolvido um material de apoio composto por slides disponibilizando o código de forma progressiva, este material é divido em passos com comentários que visam possibilitar o desenvolvimento do jogo por um iniciante interessado mesmo sem a presença de um instrutor \todo[inline]{bla bla bla...}
 
 \subsection{A Motivação e o Jogo}
-Uma vez, com o escopo definido, percebeu-se que um jogo do tipo idle clicker configuraria um projeto possível de se aplicar os conceitos almejados de forma interativa e envolvente \todo[inline]{bla bla bla...} Jogos idle clicker são jogos sobre automação e administração de recursos \todo[inline]{bla bla bla...}
+Uma vez, com o escopo definido, percebeu-se que um jogo do tipo \gls{ic} configuraria um projeto possível de se aplicar os conceitos almejados de forma interativa e envolvente \todo[inline]{bla bla bla...} Jogos \gls{ic} são jogos sobre automação e administração de recursos \todo[inline]{bla bla bla...}
 
 Desta maneira foi escolhida como temática um jogo que a cada \texttt{click} o usuário obtém uma cópia de um recurso como madeira, que, por sua vez, pode ser vendida para a obtenção de ouro \todo[inline]{bla bla bla...}
 
